@@ -1,0 +1,10 @@
+<div>
+    <h2 class="font-bold">Sizes:</h2>
+</div>
+
+<div>
+    <ng-container *ngFor="let category of categories; let i = index">
+        <button class="round-btn mx-2 my-2 font-light" (click)="onShowCategory(category)">{{category}}</button>
+        <br *ngIf="(i + 1) % 4 === 0" />
+    </ng-container>
+</div>

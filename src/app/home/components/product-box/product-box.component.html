@@ -1,0 +1,37 @@
+<mat-card *ngIf="product" class="text-center" (mouseenter)="onCardHover(true)" (mouseleave)="onCardHover(false)">
+    <div>
+        <div class="top-right-text" *ngIf="product.isFreeShipping">
+            {{text}}
+        </div>
+        <img class="mb-1 mx-auto h-[320px] w-[220px]"
+            [src]="isHovered ? './assets/imges/'+product.sku+'-2'+'.webp' : './assets/imges/'+product.sku+'.webp'"
+            [routerLink]="['/productDetails', product.id]"
+        />
+        <div class="w-full">
+            <div>
+                <h5 class="font-bold">{{product.title}}</h5>
+            </div>
+
+            <div class="felx justify-between font-bold">
+                <span class="text-red-400">{{product.price | currency}}</span>
+            </div>
+
+            <div class="felx justify-between font-light" *ngIf="product.installments !== 0">
+                <span>or {{product.installments}} x</span>
+                <span>{{product.price | division: product.installments}}</span>
+            </div>
+
+            <div class="felx justify-between font-light" *ngIf="product.installments == 0">
+                <br>
+            </div>
+
+            <div>
+                <button class="bg-black text-white w-full h-10"
+                (click)="onAddToCart(product)"
+                >
+                    Add to cart
+                </button>
+            </div>
+        </div>
+    </div>
+</mat-card>

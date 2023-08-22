@@ -1,0 +1,30 @@
+<div class="flex justify-center w-full">
+    <mat-card class=" w-1/2">
+        <span class="flex justify-between">
+            <button routerLink="/login" mat-raised-button color="primary" class="w-1/2">Login</button>
+            <button routerLink="/signup" mat-button class="w-1/2">Register</button>
+        </span>
+        <form #loginForm="ngForm" (ngSubmit)="OnSubmit(loginForm)">
+
+            <mat-form-field appearance="fill" class="mt-5 px-2 py-2 w-full">
+                <mat-label>Username</mat-label>
+                <input type="text" matInput placeholder="Username" 
+                name="Username" #Username="ngModel" [(ngModel)]="user.Username" required>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" class=" px-2 py-2 w-full">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Password" 
+                name="Password" #Password="ngModel" [(ngModel)]="user.Password" required>
+              </mat-form-field>
+            
+              <button type="submit"
+                mat-raised-button 
+                color="primary"
+                class="ml-2 mb-2 place-self-start"
+                [disabled]="!loginForm.valid">LOGIN
+              </button>
+        </form>
+    </mat-card>
+</div>
+

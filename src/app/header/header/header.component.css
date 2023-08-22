@@ -1,0 +1,20 @@
+.right-side-dialog {
+    right: -100%;
+    transition: right 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    background-color: black;
+    z-index: 1000;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+.right-side-dialog.open {
+    right: 0;
+}
+
+.mat-mdc-table tbody, .mat-mdc-table tfoot, .mat-mdc-table thead, .mat-mdc-cell, .mat-mdc-footer-cell, .mat-mdc-header-row, .mat-mdc-row, .mat-mdc-footer-row, .mat-mdc-table .mat-mdc-header-cell {
+    background: white;
+}

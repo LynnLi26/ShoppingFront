@@ -1,0 +1,21 @@
+<app-header></app-header>
+<mat-drawer-container 
+    [autosize]="true"
+    class="min-h-full max-w-7xl mx-auto boarder-x justify-start"
+>
+    <mat-drawer mode="side" opened class="px-6">
+        <app-filters (showCategory)="onShowCategory($event)"></app-filters>
+    </mat-drawer>
+    <mat-drawer-content>
+        <h4 class="">{{count + ' Product(s) found'}}</h4>
+        <mat-grid-list
+            gutterSize="16"
+            [cols]="4"
+            rowHeight="450"
+        >
+            <mat-grid-tile *ngFor="let product of products">
+                <app-product-box [product]="product"></app-product-box>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-drawer-content>
+</mat-drawer-container>

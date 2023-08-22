@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.round-btn {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Same as width for a round button */
+    border-radius: 50%;
+    background-color: #dddbdb; /* Adjust the background color */
+    color: black;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #686666; /* Adjust hover background color */
+      }
+}
+
+.top-right-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #101010;
+    padding: 1px 1px;
+    border-radius: 2px;
+    font-size: 10px;
+    color: #f2eaea;
+  }
+
+
+
+/*html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/
